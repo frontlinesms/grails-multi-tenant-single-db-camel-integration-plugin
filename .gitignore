@@ -1,0 +1,20 @@
+# The plugin.xml.  No one knows what this file is for.
+plugin.xml
+
+# Prevent plugin binaries from uploading to repo
+*.zip
+
+# Grails build directory
+target/
+
+# Vim swap files
+*.swp
+.classpath
+.settings/
+.project
+
+*.log
+
+# Not sure what this is for - not useful but keeps regenerating
+web-app/
+
