@@ -1,7 +1,7 @@
 import grails.plugin.multitenantsingledbcamelintegration.MultiTenantSingleDbCamelIntegrationGrailsPluginUtils as Utils
 
 class MultiTenantSingleDbCamelIntegrationGrailsPlugin {
-	def version = "0.1-SNAPSHOT"
+	def version = "0.1"
 	def grailsVersion = "2.0 > *"
 	def pluginExcludes = ['grails-app/views/error.gsp']
 	def title = 'Multi Tenant Single Db Apache Camel Integration Plugin'
