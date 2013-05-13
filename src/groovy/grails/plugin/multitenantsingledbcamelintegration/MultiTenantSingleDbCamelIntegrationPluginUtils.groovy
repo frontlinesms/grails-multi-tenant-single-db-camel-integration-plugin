@@ -33,11 +33,13 @@ class MultiTenantSingleDbCamelIntegrationGrailsPluginUtils {
 	/** Copied from RoutingGrailsPlugin.  Keep in sync. */
 	static onChange = { event ->
 		def artifactName = "${event.source.name}"
+		def template = event.ctx.getBean('producerTemplate')
+		def currentTenant = event.ctx.getBean('currentTenant')
 
 		if (artifactName.endsWith('Controller') || artifactName.endsWith('Service')) {
 			def artifactType = (artifactName.endsWith('Controller')) ? 'controller' : 'service'
 			def grailsClass = application."${artifactType}Classes".find { it.fullName == artifactName }
-			addDynamicMethods([ grailsClass ], event.ctx.getBean('producerTemplate'))
+			addDynamicMethods([ grailsClass ], template, currentTenant)
 		}
 	}
 
