@@ -37,10 +37,8 @@ class MultitenantInterceptor implements InterceptStrategy {
 				// use of withNewSession and consequently X.withTenantId or multiTenantService.doWithTenantId
 				// possibly relating to http://jira.grails.org/browse/GRAILS-7780.
 				// Consequently we are left with this potentially troublesome hack:
-				if(tenantId) {
-					println "][ MultitenantInterceptor.Processor.process() :: setting tenant ID: $tenantId"
-					currentTenant.set(tenantId)
-				}
+				println "][ MultitenantInterceptor.Processor.process() :: setting tenant ID: $tenantId"
+				currentTenant.set(tenantId)
 				target.process(exchange)
 			}
 		}
